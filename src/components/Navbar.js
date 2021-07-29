@@ -142,7 +142,7 @@ function Navbar() {
                 style: { textDecoration: 'none' },
                 key: label,
                 }}>
-            <MenuItem>{label}</MenuItem>
+            <MenuItem>{icon}{label}</MenuItem>
           </Link>
           );
         });
