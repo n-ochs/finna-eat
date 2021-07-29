@@ -7,7 +7,6 @@ import Find from './pages/Find';
 import Book from './pages/Book';
 import Contact from './pages/Contact';
 
-
 function App() {
 
   const theme = createTheme({
