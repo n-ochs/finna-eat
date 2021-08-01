@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import Home from './pages/Home';
 import About from'./pages/About';
 import Find from './pages/Find';
@@ -24,6 +25,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
       <Navbar />
+      <Hero />
         <Switch>
           <Route exact path='/'>
             <Home />
