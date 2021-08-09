@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
+import logo from '../imgs/logo.png';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -12,20 +13,19 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         color: '#fff',
         fontSize: '4rem',
+        marginBottom: '2%',
         [theme.breakpoints.down('sm')]: {
           height: 300,
           fontSize: '3em'
         }},
     logo: {
-        height: '150px',
-        width: '150px',
-        border: 'solid black',
-        borderRadius: '50%',
+        height: '250px',
+        width: 'auto',
         marginTop: '1%',
-        marginLeft: '2%',
+        marginLeft: '1%',
         '@media (max-width: 900px)': {
             height: '100px',
-            width: '100px'
+            width: 'auto'
         },
     }
 }));
@@ -34,7 +34,7 @@ function Hero() {
     const classes = useStyles();
     return (
         <Box className={classes.hero}>
-            <Box className={classes.logo} />
+            <img className={classes.logo} src={logo} alt='Finna-Eat logo' />
         </Box>
     );
 };
