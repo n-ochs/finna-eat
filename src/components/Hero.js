@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         color: '#fff',
         fontSize: '4rem',
+        marginBottom: '2%',
         [theme.breakpoints.down('sm')]: {
           height: 300,
           fontSize: '3em'

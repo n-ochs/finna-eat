@@ -1,21 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
     container: {
         justifyContent: 'center',
     },
+    title: {
+        textAlign: 'center',
+    },
     portrait: {
         height: '475px',
         width: '400px',
         border: 'solid black',
-        marginRight: '5%'
+        marginRight: '5%',
+        '@media (max-width: 900px)': {
+            marginRight: 'auto'
+        },
     },
     text: {
         height: 'auto',
-        width: '50%'
+        width: '50%',
+        '@media (max-width: 900px)': {
+            width: 'auto'
+        },
     }
 }));
 
@@ -24,10 +32,13 @@ function Bio() {
     const classes = useStyles();
 
     return (
-        <Container>
+        <>
+        <Typography className={classes.title} variant='h1'>
+            About Us
+        </Typography>
             <Box display='flex' flexWrap='wrap' m={1} p={1} className={classes.container}>
                 <Box className={classes.portrait}>
-
+                    {/* image here */}
                 </Box>
                 <Box className={classes.text}>
                     <Typography>
@@ -39,7 +50,7 @@ function Bio() {
                     </Typography>
                 </Box>
             </Box>
-        </Container>
+        </>
     );
 };
 
