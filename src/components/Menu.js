@@ -14,6 +14,9 @@ const useStyles = makeStyles(() => ({
     },
     menuItem: {
         minHeight: '13vh',
+    },
+    menuSection: {
+        marginBottom: '5vh'
     }
 }));
 
@@ -27,7 +30,7 @@ function Menu() {
             </Typography>
             
             <Box display='flex' align='center' className={classes.container}>
-                <Box>
+                <Box className={classes.menuSection}>
                     <Typography variant='h4'>
                         Lagniappe
                     </Typography>
@@ -40,7 +43,7 @@ function Menu() {
                     ))}
                 </Box>
 
-                <Box>
+                <Box className={classes.menuSection}>
                     <Typography variant='h4'>
                         Vegetarian
                     </Typography>
@@ -53,7 +56,7 @@ function Menu() {
                     ))}
                 </Box>
 
-                <Box>
+                <Box className={classes.menuSection}>
                     <Typography variant='h4'>
                         Carnivore
                     </Typography>
@@ -66,7 +69,7 @@ function Menu() {
                     ))}
                 </Box>
 
-                <Box>
+                <Box className={classes.menuSection}>
                     <Typography variant='h4'>
                         Pescatarian
                     </Typography>
