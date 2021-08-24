@@ -30,57 +30,20 @@ function Menu() {
             </Typography>
             
             <Box display='flex' align='center' className={classes.container}>
-                <Box className={classes.menuSection}>
-                    <Typography variant='h4'>
-                        Lagniappe
-                    </Typography>
-
-                    {menu.Lagniappe.map((item, index) => (
-                        <Box key={index} className={classes.menuItem}>
-                            <Typography variant='subtitle1'>{item.Name}</Typography>
-                            <Typography className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        </Box>
-                    ))}
-                </Box>
-
-                <Box className={classes.menuSection}>
-                    <Typography variant='h4'>
-                        Vegetarian
-                    </Typography>
-
-                    {menu.Vegetarian.map((item, index) => (
-                        <Box key={index} className={classes.menuItem}>
-                            <Typography variant='subtitle1'>{item.Name}</Typography>
-                            <Typography className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        </Box>
-                    ))}
-                </Box>
-
-                <Box className={classes.menuSection}>
-                    <Typography variant='h4'>
-                        Carnivore
-                    </Typography>
-
-                    {menu.Carnivore.map((item, index) => (
-                        <Box key={index} className={classes.menuItem}>
-                            <Typography variant='subtitle1'>{item.Name}</Typography>
-                            <Typography className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        </Box>
-                    ))}
-                </Box>
-
-                <Box className={classes.menuSection}>
-                    <Typography variant='h4'>
-                        Pescatarian
-                    </Typography>
-
-                    {menu.Pescatarian.map((item, index) => (
-                        <Box key={index} className={classes.menuItem}>
-                            <Typography variant='subtitle1'>{item.Name}</Typography>
-                            <Typography className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        </Box>
-                    ))}
-                </Box>
+                {menu.food.map((category, index) => (
+                    <Box key={index} className={classes.menuSection}>
+                        <Typography variant='h4'>
+                            {category.title}
+                        </Typography>
+                        
+                        {category.items.map((item, index) => (
+                            <Box key={index} className={classes.menuItem}>
+                                <Typography variant='subtitle1'>{item.Name}</Typography>
+                                <Typography variant='caption' className={classes.itemDescription}>{item.Description}</Typography>
+                            </Box>
+                        ))}
+                    </Box>
+                ))}
             </Box>
         </Box>
     );
