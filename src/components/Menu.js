@@ -1,95 +1,88 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Container, Typography } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import menu from '../data/menu.json';
 
 const useStyles = makeStyles(() => ({
-    root: {
-        flexGrow: 1,
-        marginTop: '1%'
+    itemDescription: {
+        fontStyle: 'italic'
     },
     container: {
-        height: '100%',
-        width: 'auto',
-        border: 'solid black'
+        '@media (max-width: 900px)': {
+            display: 'block'
+        },
     },
-    itemName: {
-        fontStyle: 'italic'
-    }
 }));
 
 function Menu() {
     const classes = useStyles();
-    console.log(menu.Lagniappe)
 
     return (
         <>
 
-        <Typography variant='h1'>
+        <Typography variant='h1' align='center'>
             Menu
         </Typography>
         
-        <Typography variant='h5'>
-            Lagniappe
-        </Typography>
+        <Box display='flex' align='center' className={classes.container}>
+            <Box>
+                <Typography variant='h4'>
+                    Lagniappe
+                </Typography>
 
-        {menu.Lagniappe.map((item) => (
-            <>
-                <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
-                <Typography key={item.Name} className={classes.itemName} variant='caption'>{item.Description}</Typography>
-            </>
-        ))}
+                {menu.Lagniappe.map((item) => (
+                    <Box>
+                        <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
+                        <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
+                        <br/><br/>
+                    </Box>
+                ))}
+            </Box>
 
-        <Typography variant='h5'>
-            Vegetarian
-        </Typography>
+            <Box>
+                <Typography variant='h4'>
+                    Vegetarian
+                </Typography>
 
-        {menu.Vegetarian.map((item) => (
-            <>
-                <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
-                <Typography key={item.Name} className={classes.itemName} variant='caption'>{item.Description}</Typography>
-            </>
-        ))}
+                {menu.Vegetarian.map((item) => (
+                    <Box>
+                        <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
+                        <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
+                        <br/><br/>
+                    </Box>
+                ))}
+            </Box>
 
-        <Typography variant='h5'>
-            Carnivore
-        </Typography>
+            <Box>
+                <Typography variant='h4'>
+                    Carnivore
+                </Typography>
 
-        {menu.Carnivore.map((item) => (
-            <>
-                <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
-                <Typography key={item.Name} className={classes.itemName} variant='caption'>{item.Description}</Typography>
-            </>
-        ))}
+                {menu.Carnivore.map((item) => (
+                    <Box>
+                        <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
+                        <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
+                        <br/><br/>
+                    </Box>
+                ))}
+            </Box>
 
-        <Typography variant='h5'>
-            Pescatarian
-        </Typography>
+            <Box>
+                <Typography variant='h4'>
+                    Pescatarian
+                </Typography>
 
-        {menu.Pescatarian.map((item) => (
-            <>
-                <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
-                <Typography key={item.Name} className={classes.itemName} variant='caption'>{item.Description}</Typography>
-            </>
-        ))}
-
+                {menu.Pescatarian.map((item) => (
+                    <Box>
+                        <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
+                        <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
+                        <br/><br/>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+        
         </>
-
-        // <Grid container className={classes.root} spacing={2}>
-        //     <Grid item xs={12}>
-        //         <Grid container justifyContent='center' spacing={10}>
-        //             {menu.Lagniappe.map((item) => (
-        //                 <Grid key={item.Name} item>
-        //                     <Container className={classes.container}>
-        //                         <Typography>
-        //                             {item.Name}
-        //                         </Typography>
-        //                     </Container>
-        //                 </Grid>
-        //             ))}
-        //         </Grid>
-        //     </Grid>
-        // </Grid>
     );
 };
 
