@@ -1,43 +1,34 @@
 import React, { useState } from 'react'
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { TextField, Typography, Button, Grid, Box } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 import emailjs from 'emailjs-com';
 
-
-
-
-const useStyles = makeStyles((theme) => ({
-  form: {
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    position: "absolute",
-  },
+const useStyles = makeStyles(() => ({
   button: {
-    marginTop: "1rem",
-    color: "tomato",
-    borderColor: "tomato",
+    marginTop: '1rem',
+    color: 'tomato',
+    borderColor: 'tomato',
   },
 }));
 
 const InputField = withStyles({
   root: {
-    "& label.Mui-focused": {
-      color: "tomato",
+    '& label.Mui-focused': {
+      color: 'tomato',
     },
-    "& label": {
-      color: "tan",
+    '& label': {
+      color: 'tan',
     },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "tan",
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'tan',
       },
-      "&:hover fieldset": {
-        borderColor: "tan",
+      '&:hover fieldset': {
+        borderColor: 'tan',
       },
-      "&.Mui-focused fieldset": {
-        borderColor: "tan",
+      '&.Mui-focused fieldset': {
+        borderColor: 'tan',
       },
     },
   },
@@ -45,19 +36,19 @@ const InputField = withStyles({
 
 const Contact = () => {
     const classes = useStyles();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
     const [buttonText, setButtonText] = useState('contact me');
 
     const handleChange = (event) => {
-        event.target.name === "name" 
+        event.target.name === 'name' 
         ? setName(event.target.value)
-        : event.target.name === "email" 
+        : event.target.name === 'email' 
         ? setEmail(event.target.value)
-        : event.target.name === "message" 
+        : event.target.name === 'message' 
         ? setMessage(event.target.value)
-        : console.log("error")
+        : console.log('error')
       };
 
     const sendEmail = (e) => {
@@ -66,66 +57,65 @@ const Contact = () => {
         emailjs.sendForm(process.env.REACT_APP_YOUR_SERVICE_ID, process.env.REACT_APP_YOUR_TEMPLATE_ID, e.target, process.env.REACT_APP_YOUR_USER_ID)
           .then((result) => {
               console.log(result.text);
-              result.text ==="OK" ? console.log("it worked") : alert("didnt work")
-                setName("")
-                setEmail("")
-                setMessage("")
+              result.text ==='OK' ? console.log('it worked') : alert('didnt work')
+                setName('')
+                setEmail('')
+                setMessage('')
                 setButtonText('sent')
           }, (error) => {
               console.log(error.text);
           });
       }
     return (
-        <Box component="div" style={{ background: "#233", height: "100vh" }}>
-      <Grid container justifyContent="center">
-        <Box component="form" className={classes.form} onSubmit={sendEmail}>
+        <Box component='div'>
+          <Grid container justifyContent='center'>
+          <Box component='form' className={classes.form} onSubmit={sendEmail}>
           <Typography
-            variant="h5"
+            variant='h5'
             style={{
-              color: "tomato",
-              textAlign: "center",
-              
+              color: 'tomato',
+              textAlign: 'center',
             }}
           >
             Contact Finna-Eat
           </Typography>
           
           <InputField
-            id="name"
-            name="name"
+            id='name'
+            name='name'
             fullWidth={true}
-            label="Name"
-            variant="outlined"
-            inputProps={{ style: { color: "white" } }}
-            margin="dense"
-            size="medium"
+            label='Name'
+            variant='outlined'
+            inputProps={{ style: { color: 'black' } }}
+            margin='dense'
+            size='medium'
             onChange={(e) => handleChange(e)}
             value={name}
           />
           <br />
 
           <InputField
-            id="email"
-            name="email"
+            id='email'
+            name='email'
             fullWidth={true}
-            label="Email"
-            variant="outlined"
-            inputProps={{ style: { color: "white" } }}
-            margin="dense"
-            size="medium"
+            label='Email'
+            variant='outlined'
+            inputProps={{ style: { color: 'black' } }}
+            margin='dense'
+            size='medium'
             onChange={(e) => handleChange(e)}
             value={email}
           />
           <br />
           <InputField
-            id="message"
-            name="message"
+            id='message'
+            name='message'
             fullWidth={true}
-            label="Message"
-            variant="outlined"
-            inputProps={{ style: { color: "white" } }}
-            margin="dense"
-            size="medium"
+            label='Message'
+            variant='outlined'
+            inputProps={{ style: { color: 'black' } }}
+            margin='dense'
+            size='medium'
             multiline
             rows={4}
             onChange={(e) => handleChange(e)}
@@ -133,9 +123,9 @@ const Contact = () => {
           />
           <br />
           <Button
-            type="submit"
+            type='submit'
             className={classes.button}
-            variant="outlined"
+            variant='outlined'
             fullWidth={true}
             endIcon={<SendIcon />}
           >
@@ -144,7 +134,7 @@ const Contact = () => {
         </Box>
       </Grid>
     </Box>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;
