@@ -7,28 +7,28 @@ import emailjs from 'emailjs-com';
 const useStyles = makeStyles(() => ({
   button: {
     marginTop: '1rem',
-    color: 'tomato',
-    borderColor: 'tomato',
+    color: '#C41D33',
+    borderColor: '#C41D33',
   },
 }));
 
 const InputField = withStyles({
   root: {
     '& label.Mui-focused': {
-      color: 'tomato',
+      color: '#C41D33',
     },
     '& label': {
-      color: 'tan',
+      color: '#C41D33',
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: 'tan',
+        borderColor: '#C41D33',
       },
       '&:hover fieldset': {
-        borderColor: 'tan',
+        borderColor: '#C41D33',
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'tan',
+        borderColor: '#C41D33',
       },
     },
   },
@@ -67,18 +67,13 @@ const Contact = () => {
           });
       }
     return (
-        <Box component='div'>
-          <Grid container justifyContent='center'>
+      <Box component='div'>
+        <Typography variant='h2' align='center'>
+          Contact Us
+        </Typography>
+
+        <Grid container justifyContent='center'>
           <Box component='form' className={classes.form} onSubmit={sendEmail}>
-          <Typography
-            variant='h5'
-            style={{
-              color: 'tomato',
-              textAlign: 'center',
-            }}
-          >
-            Contact Finna-Eat
-          </Typography>
           
           <InputField
             id='name'
@@ -107,6 +102,7 @@ const Contact = () => {
             value={email}
           />
           <br />
+
           <InputField
             id='message'
             name='message'
@@ -122,6 +118,7 @@ const Contact = () => {
             value={message}
           />
           <br />
+
           <Button
             type='submit'
             className={classes.button}
@@ -134,7 +131,7 @@ const Contact = () => {
         </Box>
       </Grid>
     </Box>
-    );
+  );
 };
 
 export default Contact;
