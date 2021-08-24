@@ -12,6 +12,9 @@ const useStyles = makeStyles(() => ({
             display: 'block'
         },
     },
+    menuItem: {
+        minHeight: '13vh'
+    }
 }));
 
 function Menu() {
@@ -30,11 +33,10 @@ function Menu() {
                     Lagniappe
                 </Typography>
 
-                {menu.Lagniappe.map((item) => (
-                    <Box>
+                {menu.Lagniappe.map((item, index) => (
+                    <Box className={classes.menuItem}>
                         <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
                         <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        <br/><br/>
                     </Box>
                 ))}
             </Box>
@@ -45,10 +47,9 @@ function Menu() {
                 </Typography>
 
                 {menu.Vegetarian.map((item) => (
-                    <Box>
+                    <Box className={classes.menuItem}>
                         <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
                         <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        <br/><br/>
                     </Box>
                 ))}
             </Box>
@@ -59,10 +60,9 @@ function Menu() {
                 </Typography>
 
                 {menu.Carnivore.map((item) => (
-                    <Box>
+                    <Box className={classes.menuItem}>
                         <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
                         <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        <br/><br/>
                     </Box>
                 ))}
             </Box>
@@ -73,10 +73,9 @@ function Menu() {
                 </Typography>
 
                 {menu.Pescatarian.map((item) => (
-                    <Box>
+                    <Box className={classes.menuItem}>
                         <Typography key={item.Name} variant='subtitle1'>{item.Name}</Typography>
                         <Typography key={item.Name} className={classes.itemDescription} variant='caption'>{item.Description}</Typography>
-                        <br/><br/>
                     </Box>
                 ))}
             </Box>
