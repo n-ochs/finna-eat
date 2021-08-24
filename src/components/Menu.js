@@ -1,16 +1,22 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Container } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
+import menu from '../data/menu.json';
 
 const useStyles = makeStyles(() => ({
-    root: {
-        flexGrow: 1,
-        marginTop: '1%'
+    itemDescription: {
+        fontStyle: 'italic'
     },
     container: {
-        height: '100%',
-        width: 'auto',
-        border: 'solid black'
+        '@media (max-width: 900px)': {
+            display: 'block'
+        },
+    },
+    menuItem: {
+        minHeight: '13vh',
+    },
+    menuSection: {
+        marginBottom: '5vh'
     }
 }));
 
@@ -18,19 +24,28 @@ function Menu() {
     const classes = useStyles();
 
     return (
-        <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12}>
-                <Grid container justifyContent='center' spacing={10}>
-                    {[0, 1].map((value) => (
-                        <Grid key={value} item>
-                            <Container className={classes.container}>
-                                Menu Item
-                            </Container>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Grid>
-        </Grid>
+        <Box>
+            <Typography variant='h2' align='center'>
+                Menu
+            </Typography>
+            
+            <Box display='flex' align='center' className={classes.container}>
+                {menu.food.map((category, index) => (
+                    <Box key={index} className={classes.menuSection}>
+                        <Typography variant='h4'>
+                            {category.title}
+                        </Typography>
+                        
+                        {category.items.map((item, index) => (
+                            <Box key={index} className={classes.menuItem}>
+                                <Typography variant='subtitle1'>{item.Name}</Typography>
+                                <Typography variant='caption' className={classes.itemDescription}>{item.Description}</Typography>
+                            </Box>
+                        ))}
+                    </Box>
+                ))}
+            </Box>
+        </Box>
     );
 };
 

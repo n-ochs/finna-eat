@@ -131,6 +131,10 @@ function Navbar() {
       );
     };
 
+    const drawerClose = () => {
+        setState((prevState) => ({ ...prevState, drawerOpen: false }));
+    };
+
     const getDrawerChoices = () => {
         return navItems.map(({ label, href, icon }) => {
             return (
@@ -141,6 +145,7 @@ function Navbar() {
                 color: 'inherit',
                 style: { textDecoration: 'none' },
                 key: label,
+                onClick: drawerClose
                 }}>
             <MenuItem>{icon}{label}</MenuItem>
           </Link>

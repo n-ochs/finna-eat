@@ -33,7 +33,7 @@ function Bio() {
 
     return (
         <>
-        <Typography className={classes.title} variant='h1'>
+        <Typography className={classes.title} variant='h2'>
             About Us
         </Typography>
             <Box display='flex' flexWrap='wrap' m={1} p={1} className={classes.container}>
