@@ -3,8 +3,13 @@ import { Card, CardContent, CardMedia, makeStyles, Typography } from '@material-
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        width: 300,
+        height: 'auto',
         margin: '1%',
+        '@media (max-width: 900px)': {
+            margin: 'auto',
+            marginBottom: '4%'
+        }
     },
     media: {
         height: 200
