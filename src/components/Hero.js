@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, makeStyles } from '@material-ui/core';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import logo from '../imgs/logo.png';
+import jumbotron from '../imgs/Hero.png';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-        height: '500px',
+        backgroundImage: `url(${jumbotron})`,
+        height: '800px',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -13,29 +14,40 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         color: '#fff',
         fontSize: '4rem',
-        marginBottom: '1vh',
         [theme.breakpoints.down('sm')]: {
           height: 300,
           fontSize: '3em'
         }},
-    logo: {
+    theLogo: {
         height: '250px',
         width: 'auto',
         marginTop: '1%',
         marginLeft: '1%',
+        position: 'absolute',
         '@media (max-width: 900px)': {
             height: '100px',
             width: 'auto'
         },
+    },
+    slogan: {
+        margin: 'auto',
+        fontStyle: 'italic',
+        textShadow: '#FFF 0 0 10px',
+        '@media (max-width: 900px)': {
+            fontSize: '50%'
+        }
     }
 }));
 
 function Hero() {
-    const classes = useStyles();
+    const { hero, theLogo, slogan } = useStyles();
     return (
-        <Box className={classes.hero}>
-            <img className={classes.logo} src={logo} alt='Finna-Eat logo' />
-        </Box>
+        <Paper className={hero} elevation={0} square>
+            <img className={theLogo} src={logo} alt='Finna-Eat logo' />
+            <Typography className={slogan} variant='h2'>
+                JUST GOOD FOOD
+            </Typography>
+        </Paper>
     );
 };
 

@@ -1,49 +1,57 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Box } from '@material-ui/core';
-import menu from '../data/menu.json';
+import MenuData from '../data/MenuData';
+import MenuCard from './MenuCard';
+import MenuBackground from '../imgs/MenuBackground.jpg';
 
 const useStyles = makeStyles(() => ({
-    itemDescription: {
-        fontStyle: 'italic'
+    root: {
+        backgroundImage: `url(${MenuBackground})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        position: 'relative',
     },
     container: {
         '@media (max-width: 900px)': {
             display: 'block'
         },
     },
-    menuItem: {
-        minHeight: '13vh',
+    title: {
+        textAlign: 'center'
     },
-    menuSection: {
-        marginBottom: '5vh'
+    categories: {
+        marginBottom: '4vh'
+    },
+    foodItems: {
+        justifyContent: 'center'
     }
 }));
 
 function Menu() {
-    const classes = useStyles();
+    const { root, container, title, categories, foodItems } = useStyles();
 
     return (
-        <Box>
+        <Box className={root}>
             <Typography variant='h2' align='center'>
                 Menu
             </Typography>
             
-            <Box display='flex' align='center' className={classes.container}>
-                {menu.food.map((category, index) => (
-                    <Box key={index} className={classes.menuSection}>
-                        <Typography variant='h4'>
-                            {category.title}
-                        </Typography>
-                        
-                        {category.items.map((item, index) => (
-                            <Box key={index} className={classes.menuItem}>
-                                <Typography variant='subtitle1'>{item.Name}</Typography>
-                                <Typography variant='caption' className={classes.itemDescription}>{item.Description}</Typography>
-                            </Box>
-                        ))}
+            <Box className={container}>
+                {MenuData.food.map((category, index) => {
+                    return (
+                        <Box className={categories} key={index}>
+                            <Typography className={title} variant='h4'>
+                                {category.title}
+                            </Typography>
+                        <Box className={foodItems} display='flex' flexWrap='wrap'>
+                            {category.items.map((item, index) => {
+                                return <MenuCard key={index} name={item.name} description={item.description} price={item.price} img={item.img} />
+                            })}
+                        </Box>
                     </Box>
-                ))}
+                )})}
             </Box>
         </Box>
     );
