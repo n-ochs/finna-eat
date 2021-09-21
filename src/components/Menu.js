@@ -22,7 +22,8 @@ const useStyles = makeStyles(() => ({
         textAlign: 'center'
     },
     categories: {
-        marginBottom: '4vh'
+        // marginBottom: '4vh'
+        padding: '1%'
     },
     foodItems: {
         justifyContent: 'center'

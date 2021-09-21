@@ -6,7 +6,7 @@ import { IoLogoTiktok } from 'react-icons/io5';
 const useStyles = makeStyles(() => ({
     root: {
         width: '100%',
-        height: '300px',
+        height: '175px',
         background: '#1e1415',
         display: 'flex',
         flexWrap: 'wrap'
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() => ({
         width: '100%',
         border: 'solid white',
         borderWidth: 'thin',
-        marginTop: '5%'
+        // marginTop: '5%'
     },
     copyright: {
         width: '100%',
