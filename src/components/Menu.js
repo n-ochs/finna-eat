@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        position: 'relative',
+        position: 'relative'
     },
     container: {
         '@media (max-width: 900px)': {
@@ -22,7 +22,6 @@ const useStyles = makeStyles(() => ({
         textAlign: 'center'
     },
     categories: {
-        // marginBottom: '4vh'
         padding: '1%'
     },
     foodItems: {

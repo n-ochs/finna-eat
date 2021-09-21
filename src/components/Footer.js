@@ -13,9 +13,8 @@ const useStyles = makeStyles(() => ({
     },
     content: {
         height: 'auto',
-        // width: '400px',
         margin: 'auto',
-        color: 'white',
+        color: 'white'
     },
     socials: {
         display: 'flex',
@@ -30,7 +29,7 @@ const useStyles = makeStyles(() => ({
     },
     contact: {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     phoneNumber: {
         marginRight: '10%'
@@ -41,9 +40,8 @@ const useStyles = makeStyles(() => ({
     divider: {
         height: '0',
         width: '100%',
-        border: 'solid white',
-        borderWidth: 'thin',
-        // marginTop: '5%'
+        borderBottom: '1px solid white',
+        borderWidth: 'thin'
     },
     copyright: {
         width: '100%',
@@ -54,6 +52,7 @@ const useStyles = makeStyles(() => ({
 
 function Footer() {
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
+    
     return (
         <Box className={root}>
             <Box className={content}>
