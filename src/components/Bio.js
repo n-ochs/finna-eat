@@ -4,10 +4,10 @@ import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
     container: {
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     title: {
-        textAlign: 'center',
+        textAlign: 'center'
     },
     portrait: {
         height: '475px',
@@ -16,19 +16,18 @@ const useStyles = makeStyles(() => ({
         marginRight: '5%',
         '@media (max-width: 900px)': {
             marginRight: 'auto'
-        },
+        }
     },
     text: {
         height: 'auto',
         width: '50%',
         '@media (max-width: 900px)': {
             width: 'auto'
-        },
+        }
     }
 }));
 
 function Bio() {
-
     const classes = useStyles();
 
     return (

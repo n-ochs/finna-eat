@@ -7,6 +7,7 @@ import About from'./pages/About';
 import Find from './pages/Find';
 import Book from './pages/Book';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -18,6 +19,11 @@ function App() {
       secondary: {
         main: '#FFF'
       },
+    },
+    typography: {
+      fontFamily: [
+        'Roboto'
+      ].join(','),
     }
   });
 
@@ -43,6 +49,7 @@ function App() {
             <Contact />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </ThemeProvider>
   );

@@ -14,30 +14,30 @@ const useStyles = makeStyles({
     media: {
         height: 200
     },
-    price: {
+    priceAmount: {
         textAlign: 'right'
     }
 });
 
-function MenuCard(props) {
-    const { root, media, price } = useStyles();
+function MenuCard({ name, description, price, img }) {
+    const { root, media, priceAmount } = useStyles();
 
     return (
         <Card className={root} elevation={7}>
             <CardMedia 
                 className={media} 
-                image={props.img} 
-                title={props.name} 
+                image={img} 
+                title={name} 
             />
             <CardContent>
                 <Typography variant='h5' component='h2'>
-                    {props.name}
+                    {name}
                 </Typography>
                 <Typography variant='body2' color='textSecondary' component='p'>
-                    {props.description}
+                    {description}
                 </Typography>
-                <Typography className={price} variant='subtitle2' color='primary' component='h3'>
-                    {props.price}
+                <Typography className={priceAmount} variant='subtitle2' color='primary' component='h3'>
+                    {price}
                 </Typography>
             </CardContent>
         </Card>
