@@ -1,7 +1,8 @@
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Box, Typography, Link } from '@material-ui/core';
 import { FaInstagram, FaFacebookSquare } from 'react-icons/fa';
 import { IoLogoTiktok } from 'react-icons/io5';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -52,18 +53,40 @@ const useStyles = makeStyles(() => ({
 
 function Footer() {
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
+    const socialIcons = [
+        {
+            href: '/',
+            icon: <FaFacebookSquare className={icons} />
+        },
+        {
+            href: '/',
+            icon: <FaInstagram className={icons} />
+        },
+        {
+            href: '/',
+            icon: <IoLogoTiktok className={icons} />
+        },
+    ];
     
     return (
         <Box className={root}>
             <Box className={content}>
                 <Box className={socials}>
-                    <FaFacebookSquare className={icons} />
-                    <FaInstagram className={icons} />
-                    <IoLogoTiktok className={icons} />
+                    {socialIcons.map(({ href, icon }) => {
+                        return (
+                            <Link 
+                            {...{
+                                component: RouterLink,
+                                to: href 
+                            }}>
+                                {icon}
+                            </Link>
+                        )
+                    })}
                 </Box>
                 <Box className={contact}>
                     <Typography className={phoneNumber} display='inline' variant='body2' component='p'>
-                        123-123-1234
+                        123.123.1234
                     </Typography>
                     <Typography className={email} display='inline' variant='body2' component='p'>
                         finnaeat@gmail.com

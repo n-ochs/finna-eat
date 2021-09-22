@@ -19,6 +19,11 @@ function App() {
       secondary: {
         main: '#FFF'
       },
+    },
+    typography: {
+      fontFamily: [
+        'Roboto'
+      ].join(','),
     }
   });
 
