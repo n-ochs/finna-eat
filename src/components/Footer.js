@@ -1,8 +1,7 @@
 import React from 'react';
-import { makeStyles, Box, Typography, Link } from '@material-ui/core';
+import { makeStyles, Box, Typography, Button } from '@material-ui/core';
 import { FaInstagram, FaFacebookSquare } from 'react-icons/fa';
 import { IoLogoTiktok } from 'react-icons/io5';
-import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -55,15 +54,15 @@ function Footer() {
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
     const socialIcons = [
         {
-            href: '/',
+            href: 'https://google.com/',
             icon: <FaFacebookSquare className={icons} />
         },
         {
-            href: '/',
+            href: 'https://google.com/',
             icon: <FaInstagram className={icons} />
         },
         {
-            href: '/',
+            href: 'https://google.com/',
             icon: <IoLogoTiktok className={icons} />
         },
     ];
@@ -72,15 +71,11 @@ function Footer() {
         <Box className={root}>
             <Box className={content}>
                 <Box className={socials}>
-                    {socialIcons.map(({ href, icon }) => {
+                    {socialIcons.map(({ href, icon }, index) => {
                         return (
-                            <Link 
-                            {...{
-                                component: RouterLink,
-                                to: href 
-                            }}>
+                            <Button variant='text' key={index} onClick={() => window.open(href)} color='primary'>
                                 {icon}
-                            </Link>
+                            </Button>
                         )
                     })}
                 </Box>
