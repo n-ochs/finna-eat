@@ -46,8 +46,8 @@ function Menu() {
                                 {category.title}
                             </Typography>
                         <Box className={foodItems} display='flex' flexWrap='wrap'>
-                            {category.items.map((item, index) => {
-                                return <MenuCard key={index} name={item.name} description={item.description} price={item.price} img={item.img} />
+                            {category.items.map(({ name, description, price, img }, index) => {
+                                return <MenuCard key={index} name={name} description={description} price={price} img={img} />
                             })}
                         </Box>
                     </Box>

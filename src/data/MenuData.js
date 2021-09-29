@@ -98,4 +98,4 @@ const MenuData = {
     ]
 };
 
-export default MenuData
+export default MenuData;
