@@ -48,14 +48,14 @@ export class MapContainer extends Component {
    
     render() {
       return (
-          <div id="googleMap">
+          <div id="googleMap" >
               <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
+          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', paddingBottom: '30px'}}>
             <input
               {...getInputProps({
                 placeholder: 'Enter Address ...',
@@ -98,6 +98,11 @@ export class MapContainer extends Component {
                     }}
                     options={{
                         disableDefaultUI: true,
+                    }}
+                    containerStyle = {{
+                      position: 'relative',  
+                      width: '100%',
+                      height: '50rem'
                     }}
                     >
 
