@@ -12,7 +12,8 @@ const useStyles = makeStyles(() => ({
     portrait: {
         height: '475px',
         width: '400px',
-        border: 'solid black',
+        border: '2px solid black',
+        borderRadius: '50px',
         marginRight: '5%',
         '@media (max-width: 900px)': {
             marginRight: 'auto'
@@ -20,6 +21,9 @@ const useStyles = makeStyles(() => ({
     },
     text: {
         height: 'auto',
+        display: 'flex',
+        marginTop: 'auto',
+        marginBottom: 'auto',
         width: '50%',
         '@media (max-width: 900px)': {
             width: 'auto'

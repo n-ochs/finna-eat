@@ -49,6 +49,7 @@ const useStyles = makeStyles(() => ({
         fontWeight: 600,
         color: '#FFFEFE',
         textAlign: 'left',
+        textTransform: 'none'
     },
     menuButton: {
         fontWeight: 700,
@@ -154,9 +155,11 @@ function Navbar() {
     };
 
     const finnaeatLogo = (
-        <Typography variant='h6' component='h1' className={logo}>
-            Finna-Eat
-        </Typography>
+        <Button color='inherit' to='/' component={RouterLink} className={logo}>
+            <Typography variant='h6' component='h1'>
+                Finna-Eat
+            </Typography>
+        </Button>
     );
     
     const getMenuButtons = () => {
