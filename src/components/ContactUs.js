@@ -6,7 +6,10 @@ import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles(() => ({
   root: {
-    paddingBottom: '1%'
+    padding: '1%'
+  },
+  title: {
+    fontFamily: 'Pacifico'
   },
   button: {
     marginTop: '1rem',
@@ -72,7 +75,7 @@ const Contact = () => {
     return (
       <Box className={classes.root}>
         <Box component='div'>
-          <Typography variant='h2' align='center'>
+          <Typography className={classes.title} variant='h2' align='center'>
             Contact Us
           </Typography>
 

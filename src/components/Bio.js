@@ -1,13 +1,22 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
+import AboutBackground from '../imgs/AboutBackground.jpg';
 
 const useStyles = makeStyles(() => ({
+    root: {
+        backgroundImage: `url(${AboutBackground})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        padding: '1%'
+    },
     container: {
         justifyContent: 'center'
     },
     title: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Pacifico'
     },
     portrait: {
         height: '475px',
@@ -32,18 +41,18 @@ const useStyles = makeStyles(() => ({
 }));
 
 function Bio() {
-    const classes = useStyles();
+    const { root, container, title, portrait, text } = useStyles();
 
     return (
-        <>
-        <Typography className={classes.title} variant='h2'>
+        <Box className={root}>
+        <Typography className={title} variant='h2'>
             About Us
         </Typography>
-            <Box display='flex' flexWrap='wrap' m={1} p={1} className={classes.container}>
-                <Box className={classes.portrait}>
+            <Box display='flex' flexWrap='wrap' p={1} className={container}>
+                <Box className={portrait}>
                     {/* image here */}
                 </Box>
-                <Box className={classes.text}>
+                <Box className={text}>
                     <Typography>
                         Finna-Eat experiments with a variety of ethnic cuisine from the places I have traveled and infused with my own Cajun Creole roots. Mostly inspired by in season fresh ingredients, our menu rotates often but will feature daily staple dishes.
                         <br/><br/>
@@ -53,7 +62,7 @@ function Bio() {
                     </Typography>
                 </Box>
             </Box>
-        </>
+        </Box>
     );
 };
 
