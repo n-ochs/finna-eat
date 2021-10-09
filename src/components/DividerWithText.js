@@ -15,9 +15,11 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#000'
   },
   text: {
-    padding: '0 2rem',
+    padding: '1rem 2rem',
     border: '1px solid black',
     borderRadius: '50px',
+    background: 'white',
+    fontFamily: 'Pacifico'
   }
 }));
 
