@@ -12,7 +12,8 @@ const useStyles = makeStyles(() => ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        position: 'relative'
+        position: 'relative',
+        padding: '1%'
     },
     title: {
         fontFamily: 'Pacifico'
