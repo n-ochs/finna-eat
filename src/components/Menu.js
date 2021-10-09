@@ -4,6 +4,7 @@ import { Typography, Box } from '@material-ui/core';
 import MenuData from '../data/MenuData';
 import MenuCard from './MenuCard';
 import MenuBackground from '../imgs/MenuBackground.jpg';
+import DividerWithText from './DividerWithText';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -18,9 +19,6 @@ const useStyles = makeStyles(() => ({
             display: 'block'
         },
     },
-    title: {
-        textAlign: 'center'
-    },
     categories: {
         padding: '1%'
     },
@@ -30,7 +28,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 function Menu() {
-    const { root, container, title, categories, foodItems } = useStyles();
+    const { root, container, categories, foodItems } = useStyles();
 
     return (
         <Box className={root}>
@@ -42,9 +40,7 @@ function Menu() {
                 {MenuData.food.map((category, index) => {
                     return (
                         <Box className={categories} key={index}>
-                            <Typography className={title} variant='h4'>
-                                {category.title}
-                            </Typography>
+                            <DividerWithText>{category.title}</DividerWithText>
                         <Box className={foodItems} display='flex' flexWrap='wrap'>
                             {category.items.map(({ name, description, price, img }, index) => {
                                 return <MenuCard key={index} name={name} description={description} price={price} img={img} />
