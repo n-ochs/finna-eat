@@ -4,7 +4,10 @@ import { makeStyles, Typography, Box } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   separator: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 900px)': {
+      padding: '5%'
+  }
   },
   line: {
     height: '2px',
@@ -12,7 +15,9 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#000'
   },
   text: {
-    padding: '0 2rem'
+    padding: '0 2rem',
+    border: '1px solid black',
+    borderRadius: '50px',
   }
 }));
 
