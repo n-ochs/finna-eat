@@ -14,6 +14,9 @@ const useStyles = makeStyles(() => ({
         backgroundSize: 'cover',
         position: 'relative'
     },
+    title: {
+        fontFamily: 'Pacifico'
+    },
     container: {
         '@media (max-width: 900px)': {
             display: 'block'
@@ -28,11 +31,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 function Menu() {
-    const { root, container, categories, foodItems } = useStyles();
+    const { root, title, container, categories, foodItems } = useStyles();
 
     return (
-        <Box className={root}>
-            <Typography variant='h2' align='center'>
+        <Box className={root} id='Menu'>
+            <Typography className={title} variant='h2' align='center'>
                 Menu
             </Typography>
             
