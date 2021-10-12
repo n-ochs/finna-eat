@@ -2,6 +2,10 @@ const faunadb = require('faunadb');
 const q = faunadb.query;
 
 exports.handler = (event, context) => {
+    if (event.httpMethod !== 'PATCH'){
+        return { statusCode: 500, body: 'Requires PATCH request.' }
+    };
+
     const client = new faunadb.Client({
         secret: process.env.FAUNADB_SERVER_SECRET
     });

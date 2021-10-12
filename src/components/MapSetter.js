@@ -5,8 +5,8 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 import axios from 'axios';
 
 function MapSetter() {
-    const [ address, setAddress ] = useState('');
-    const [ submitted, setSubmitted ] = useState(false);
+    const [address, setAddress] = useState('');
+    const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (value) => {
         setAddress(value)
@@ -22,14 +22,16 @@ function MapSetter() {
                     })
                     .catch(err => console.log(err))
             })
-            .catch(error => console.error('Error', error));
+            .catch(error => console.log(error));
     };
 
     return (
         <div>
 
             {submitted ? 
-                <p style={{textAlign: 'center'}}>Success</p> : 
+
+                <p style={{textAlign: 'center'}}>Successfully updated location</p> : 
+
                 <PlacesAutocomplete value={address} onChange={handleChange} onSelect={handleSelect}>
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                   <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', paddingBottom: '30px'}}>
