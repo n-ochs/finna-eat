@@ -8,6 +8,7 @@ import Find from './pages/Find';
 import Book from './pages/Book';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import Admin from './pages/Admin';
 
 function App() {
 
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/admin'>
+            <Admin />
           </Route>
         </Switch>
         <Footer />

@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Map, Marker, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
-import PlacesAutocomplete, {
-    geocodeByAddress,
-    getLatLng,
-  } from 'react-places-autocomplete';
-
-
+import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 export class MapContainer extends Component {
     const
     constructor(props) {
