@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { makeStyles, Box, Typography, Button } from '@material-ui/core';
 import { FaInstagram, FaFacebookSquare } from 'react-icons/fa';
 import { IoLogoTiktok } from 'react-icons/io5';
@@ -50,7 +51,10 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
+const Admin = () => <h3>Admin Login</h3>
+
 function Footer() {
+    const preventDefault = event => event.preventDefault();
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
     const socialIcons = [
         {
@@ -93,6 +97,14 @@ function Footer() {
                 <Typography>
                     &copy; 2021 Finna-Eat | All Rights Reserved
                 </Typography>
+
+                
+                <Link to="/login" >
+                <Typography>
+                    Admin Login
+                    </Typography>
+                </Link>
+                
             </Box>
         </Box>
     );
