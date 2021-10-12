@@ -3,7 +3,7 @@ import React from 'react';
 export class Booking extends React.Component {
     render() {
       return (
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', padding: '30px'}}>
+        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', padding: '1%'}}>
           <div id="TTE-UUID" />
         </div>
         
