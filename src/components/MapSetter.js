@@ -9,7 +9,7 @@ function MapSetter() {
     const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (value) => {
-        setAddress(value)
+      setAddress(value)
     };
 
     const handleSelect = () => {
@@ -17,8 +17,14 @@ function MapSetter() {
             .then((results) => {
                 getLatLng(results[0])
                     .then((data) => {
-                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long }); //add .then & .catch, this is a promise
-                        setSubmitted(true);
+                      // console.log(data)
+                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long })
+                          .then(() => {
+                            setSubmitted(true);
+                          })
+                          .catch(() => {
+                            alert('Something went wrong. Please refresh the page and try again.');
+                          });
                     })
                     .catch(err => console.log(err))
             })

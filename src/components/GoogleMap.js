@@ -11,8 +11,8 @@ export class MapContainer extends Component {
             activeMarker: {},
             selectedPlace: {},
             mapCenter: {
-                lat: 33.753746,
-                lng: -84.386330,
+                lat: null,
+                lng: null,
             }
         };
       }
@@ -29,6 +29,7 @@ export class MapContainer extends Component {
       .then((res) => {
         const lat = res.data.lat;
         const long = res.data.long;
+        // console.log(res)
         this.setState({
           ...this.state,
           mapCenter: {
