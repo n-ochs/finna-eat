@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {Map, Marker, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 import PlacesAutocomplete, {
     geocodeByAddress,
@@ -28,6 +29,24 @@ export class MapContainer extends Component {
       activeMarker: marker,
       showingInfoWindow: true
     });
+
+    componentDidMount(props) {
+      axios.get('/api/get-location')
+      .then((res) => {
+        const lat = res.data.lat;
+        const long = res.data.long;
+        this.setState({
+          ...this.state,
+          mapCenter: {
+            lat: lat,
+            lng: long
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
    
    
     handleChange = address => {
