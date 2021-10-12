@@ -63,7 +63,7 @@ const useStyles = makeStyles(() => ({
     drawerContainer: {
         padding: '20px 30px',
     },
-  }));
+}));
   
 function Navbar() {
     const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();

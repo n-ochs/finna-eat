@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, makeStyles, Paper, Typography } from '@material-ui/core';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory, Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 import logo from '../imgs/logo.png';
 import jumbotron from '../imgs/Hero.png';
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
             height: '100px',
             width: 'auto'
         },
+        cursor: 'pointer'
     },
     slogan: {
         margin: 'auto',
@@ -74,7 +75,10 @@ function Hero() {
 
     return (
         <Paper className={hero} elevation={0} square>
-            <img className={theLogo} src={logo} alt='Finna-Eat logo' />
+            <Link className={theLogo} to='/'>
+                <img className={theLogo} src={logo} alt='Finna-Eat logo' />
+            </Link>
+
             <Typography className={slogan} variant='h2'>
                 JUST GOOD FOOD
             </Typography>
