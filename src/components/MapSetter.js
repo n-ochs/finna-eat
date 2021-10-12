@@ -17,7 +17,7 @@ function MapSetter() {
             .then((results) => {
                 getLatLng(results[0])
                     .then((data) => {
-                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long });
+                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long }); //add .then & .catch, this is a promise
                         setSubmitted(true);
                     })
                     .catch(err => console.log(err))

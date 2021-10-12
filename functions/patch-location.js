@@ -1,7 +1,7 @@
 const faunadb = require('faunadb');
 const q = faunadb.query;
 
-exports.handler = (event, context) => {
+exports.handler = async (event, context) => {
     if (event.httpMethod !== 'PATCH'){
         return { statusCode: 500, body: 'Requires PATCH request.' }
     };
@@ -14,7 +14,7 @@ exports.handler = (event, context) => {
 
     const ref = '312194120733950533';
 
-    return client.query(q.Update(q.Ref(`classes/locations/${ref}`), { data }))
+    return await client.query(q.Update(q.Ref(`classes/locations/${ref}`), { data }))
         .then((response) => {
             console.log('success', response);
             return {
