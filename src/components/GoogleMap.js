@@ -11,8 +11,8 @@ export class MapContainer extends Component {
             activeMarker: {},
             selectedPlace: {},
             mapCenter: {
-                lat: 33.753746,
-                lng: -84.386330,
+                lat: null,
+                lng: null,
             }
         };
       }
@@ -24,7 +24,7 @@ export class MapContainer extends Component {
       showingInfoWindow: true
     });
 
-    componentDidMount(props) {
+    componentWillMount(props) {
       axios.get('/api/get-location')
       .then((res) => {
         const lat = res.data.lat;

@@ -9,7 +9,7 @@ function MapSetter() {
     const [submitted, setSubmitted] = useState(false);
 
     const handleChange = (value) => {
-        setAddress(value)
+      setAddress(value)
     };
 
     const handleSelect = () => {
@@ -17,8 +17,13 @@ function MapSetter() {
             .then((results) => {
                 getLatLng(results[0])
                     .then((data) => {
-                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long }); //add .then & .catch, this is a promise
-                        setSubmitted(true);
+                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.lng })
+                          .then((res) => {
+                            setSubmitted(true);
+                          })
+                          .catch(() => {
+                            alert('Something went wrong. Please refresh the page and try again.');
+                          });
                     })
                     .catch(err => console.log(err))
             })
@@ -43,7 +48,7 @@ function MapSetter() {
                     />
                     <div className='autocomplete-dropdown-container'>
                       {loading && <div>Loading...</div>}
-                      {suggestions.map(suggestion => {
+                      {suggestions.map((suggestion, index) => {
                         const className = suggestion.active
                           ? 'suggestion-item--active'
                           : 'suggestion-item';
@@ -51,13 +56,13 @@ function MapSetter() {
                           ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                           : { backgroundColor: '#ffffff', cursor: 'pointer' };
                         return (
-                          <div
+                          <div key={index}
                             {...getSuggestionItemProps(suggestion, {
                               className,
                               style,
                             })}
                           >
-                            <span>{suggestion.description}</span>
+                            <span key={index}>{suggestion.description}</span>
                           </div>
                         );
                       })}

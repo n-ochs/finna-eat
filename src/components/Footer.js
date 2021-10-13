@@ -51,10 +51,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const Admin = () => <h3>Admin Login</h3>
-
 function Footer() {
-    const preventDefault = event => event.preventDefault();
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
     const socialIcons = [
         {
@@ -99,9 +96,9 @@ function Footer() {
                 </Typography>
 
                 
-                <Link to="/login" >
-                <Typography>
-                    Admin Login
+                <Link to='/login'>
+                    <Typography>
+                        Admin Login
                     </Typography>
                 </Link>
                 

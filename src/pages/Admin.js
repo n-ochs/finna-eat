@@ -3,11 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import { auth, db, logout } from "../firebase";
 import MapSetter from '../components/MapSetter';
-import GoogleMap from '../components/GoogleMap';
-
 
 function Admin() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [name, setName] = useState("");
   const history = useHistory();
   const fetchUserName = async () => {
