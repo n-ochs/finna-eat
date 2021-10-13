@@ -14,7 +14,7 @@ function Login() {
       return;
     }
     if (user) history.replace("/admin");
-  }, [user, loading]);
+  }, [user, loading, history]);
   return (
     <div className="login">
       <div className="login__container">
