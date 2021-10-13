@@ -24,12 +24,11 @@ export class MapContainer extends Component {
       showingInfoWindow: true
     });
 
-    componentDidMount(props) {
+    componentWillMount(props) {
       axios.get('/api/get-location')
       .then((res) => {
         const lat = res.data.lat;
         const long = res.data.long;
-        // console.log(res)
         this.setState({
           ...this.state,
           mapCenter: {

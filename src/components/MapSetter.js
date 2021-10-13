@@ -17,9 +17,8 @@ function MapSetter() {
             .then((results) => {
                 getLatLng(results[0])
                     .then((data) => {
-                      // console.log(data)
-                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.long })
-                          .then(() => {
+                        axios.patch('/api/patch-location', { "lat": data.lat, "long": data.lng })
+                          .then((res) => {
                             setSubmitted(true);
                           })
                           .catch(() => {
@@ -49,7 +48,7 @@ function MapSetter() {
                     />
                     <div className='autocomplete-dropdown-container'>
                       {loading && <div>Loading...</div>}
-                      {suggestions.map(suggestion => {
+                      {suggestions.map((suggestion, index) => {
                         const className = suggestion.active
                           ? 'suggestion-item--active'
                           : 'suggestion-item';
@@ -57,13 +56,13 @@ function MapSetter() {
                           ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                           : { backgroundColor: '#ffffff', cursor: 'pointer' };
                         return (
-                          <div
+                          <div key={index}
                             {...getSuggestionItemProps(suggestion, {
                               className,
                               style,
                             })}
                           >
-                            <span>{suggestion.description}</span>
+                            <span key={index}>{suggestion.description}</span>
                           </div>
                         );
                       })}
