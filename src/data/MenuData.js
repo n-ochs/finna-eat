@@ -3,6 +3,8 @@ import The504 from '../imgs/The504.jpeg';
 import CityOfAngels from '../imgs/CityOfAngels.jpeg';
 import TheGoodLooks from '../imgs/TheGoodLooks.jpeg';
 import MardiGrasMambo from '../imgs/MardiGrasMambo.png';
+import BayouBroth from '../imgs/BayouBroth.jpeg';
+import TheUptown from '../imgs/TheUptown.jpeg';
 
 const MenuData = {
     food: [
@@ -13,7 +15,7 @@ const MenuData = {
                     name: 'Bayou Broth',
                     description: 'Short ribs, shrimp, mussels, hot sausage and kimchi in a spicy asian broth over japanese noodles',
                     price: '$12.99',
-                    img: The504
+                    img: BayouBroth
                 },
                 {
                     name: 'City of Angels Chicken/Waffles',
@@ -91,7 +93,7 @@ const MenuData = {
                     name: 'The Uptown',
                     description: 'Gulf shrimp, chicken andouille, shitake, king oyster and maitake mushrooms, sautéed spinach and jalepeno over corn grits. May add cheddar cheese for extra $1.00',
                     price: '$12.99',
-                    img: The504
+                    img: TheUptown
                 }
             ]
         }

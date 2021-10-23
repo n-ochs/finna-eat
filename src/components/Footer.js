@@ -30,13 +30,13 @@ const useStyles = makeStyles(() => ({
     },
     contact: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'space-around'
     },
     phoneNumber: {
-        marginRight: '10%'
+        marginRight: '5%'
     },
     email: {
-        marginLeft: '10%'
+        marginLeft: '5%'
     },
     divider: {
         height: '0',
@@ -55,15 +55,15 @@ function Footer() {
     const { root, content, socials, icons, contact, phoneNumber, email, divider, copyright } = useStyles();
     const socialIcons = [
         {
-            href: 'https://google.com/',
+            href: 'https://www.facebook.com/Finna-Eat-109601537220056/',
             icon: <FaFacebookSquare className={icons} />
         },
         {
-            href: 'https://google.com/',
+            href: 'https://www.instagram.com/finnaeatfoods/',
             icon: <FaInstagram className={icons} />
         },
         {
-            href: 'https://google.com/',
+            href: 'https://www.tiktok.com/@finnaeatllc?',
             icon: <IoLogoTiktok className={icons} />
         },
     ];
@@ -82,10 +82,10 @@ function Footer() {
                 </Box>
                 <Box className={contact}>
                     <Typography className={phoneNumber} display='inline' variant='body2' component='p'>
-                        123.123.1234
+                        504.215.3686
                     </Typography>
                     <Typography className={email} display='inline' variant='body2' component='p'>
-                        finnaeat@gmail.com
+                        finnaeatfoods@gmail.com
                     </Typography>
                 </Box>
             </Box>
