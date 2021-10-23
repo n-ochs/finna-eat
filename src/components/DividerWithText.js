@@ -20,7 +20,10 @@ const useStyles = makeStyles(() => ({
     border: '2px solid black',
     borderRadius: '50px',
     background: 'white',
-    fontFamily: 'Pacifico'
+    fontFamily: 'Pacifico',
+    '@media (max-width: 900px)': {
+      padding: '0.6rem 1rem'
+    }
   }
 }));
 
